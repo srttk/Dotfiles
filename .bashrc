@@ -173,3 +173,7 @@ alias mypro="clear;cd ~/Doc*/work/proj*"
 alias ydl="clear;cd ~/Vi*/youtube-dl"
 alias soundcloud="clear;cd ~/Music/SoundCloud-dl"
 alias serveit="php -S localhost:3000"
+
+#AndroidDev PATH
+export PATH=${PATH}:~/android-sdk-linux/tools
+export PATH=${PATH}:~/android-sdk-linux/platform-tools
