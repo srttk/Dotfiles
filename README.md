@@ -1,2 +1,2 @@
 # Dotfils
-My Dotfile repository
+My Configuration files and friends
