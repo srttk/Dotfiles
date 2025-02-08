@@ -81,5 +81,13 @@
     "**/.nyc_output",
     "**/report",
     "**/node_modules"
-  ]
+  ],
+  "assistant": {
+    "enabled": false,
+    "version": "1"
+  },
+  "features": {
+    "copilot": false,
+    "inline_completion_provider": "none"
+  }
 }
