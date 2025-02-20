@@ -1,7 +1,7 @@
 {
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontFamily": "JetBrainsMono Nerd Font", //"Fira Code",
   "editor.fontLigatures": true,
-  "editor.fontSize": 15,
+  "editor.fontSize": 16,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "smooth",
   "editor.cursorStyle": "line",
@@ -14,34 +14,39 @@
   "editor.smoothScrolling": true,
   "svelte.enable-ts-plugin": true,
   "terminal.integrated.fontSize": 15,
-
+  
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+},  
   "animations.Install-Method": "Apc Customize UI++",
   "update.mode": "manual",
   "apc.imports": [
-    "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+      "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
   ],
   "apc.electron": {
-    "opacity": 0.97,
-    "transparent": true,
-    "backgroundColor": "#00000000",
-    "vibrancy": "fullscreen-ui"
+  "opacity": 0.99,
+  "transparent": true,
+  "backgroundColor": "#00000000",
+  "vibrancy": "fullscreen-ui"
   },
   "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": false,
   "editor.renderWhitespace": "all",
   "breadcrumbs.enabled": false,
   "makefile.configureOnOpen": true,
-  "workbench.colorTheme": "Andromeda",
+  "workbench.colorTheme": "Aura Dracula Spirit (Soft)",
   "git.confirmSync": false,
   "workbench.statusBar.visible": false,
-  "workbench.activityBar.location": "hidden"
+  "database-client.autoSync": true,
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.showTabs": "single",
+  "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+  "workbench.tips.enabled": false,
+  "explorer.compactFolders": false
 }

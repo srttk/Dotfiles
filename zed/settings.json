@@ -11,20 +11,28 @@
     "dock": "left"
   },
   "collaboration_panel": {
-    "dock": "right"
+    "dock": null
   },
-
+  "notification_panel": {
+    "dock": null,
+    "button": false
+  },
+  "chat_panel": {
+    "button": null,
+    "dock": null
+  },
   "vim_mode": false,
   "ui_font_size": 16,
   "ui_font_weight": 400,
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_size": 15,
-  "buffer_font_weight": 800,
+  "buffer_font_size": 16,
+  "buffer_font_weight": 900,
+  "cursor_shape": "bar",
 
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Latte",
-    "dark": "Andromeda"
+    "light": "Purr Light",
+    "dark": "Solarized Light"
   },
   "scrollbar": {
     "show": "never"
@@ -36,12 +44,14 @@
       }
     },
     "TypeScript": {
+      "language_servers": ["typescript-language-server", "!vtsls", "..."],
       "code_actions_on_format": {
         "source.organizeImports": true,
         "source.fixAll.eslint": true
       }
     },
     "TSX": {
+      "language_servers": ["typescript-language-server", "!vtsls", "..."],
       "code_actions_on_format": {
         "source.organizeImports": true,
         "source.fixAll.eslint": true
@@ -70,7 +80,7 @@
     "**/.settings",
     // above is default from Zed
     "**/out",
-    "**/dist",
+    // "**/dist",
     "**/.husky",
     "**/.turbo",
     "**/.vscode-test",
@@ -88,6 +98,6 @@
   },
   "features": {
     "copilot": false,
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "none"
   }
 }
