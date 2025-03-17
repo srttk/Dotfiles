@@ -13,7 +13,7 @@
   "editor.wordWrap": "on",
   "editor.smoothScrolling": true,
   "svelte.enable-ts-plugin": true,
-  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontSize": 16,
   
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
@@ -48,5 +48,10 @@
   "workbench.editor.showTabs": "single",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.tips.enabled": false,
-  "explorer.compactFolders": false
+  "explorer.compactFolders": false,
+  "workbench.iconTheme": "material-icon-theme",
+  // Sidebar
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.indent": 10
 }
