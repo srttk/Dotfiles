@@ -1,0 +1,15 @@
+# Font
+font-family = "JetBrainsMono Nerd Font"
+font-size = 16
+
+# Theme
+#theme = gruvbox-material
+theme = GruvboxDarkHard
+
+background-opacity= 0.9
+
+
+# Window
+
+window-height = 20
+window-width = 70
