@@ -4,7 +4,7 @@ font-size = 16
 
 # Theme
 #theme = gruvbox-material
-theme = GruvboxDarkHard
+theme = Gruvbox Dark
 
 background-opacity= 0.9
 
