@@ -7,19 +7,33 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-  "project_panel": {
+  "outline_panel": {
     "dock": "left"
   },
+  "git_panel": {
+    "dock": "left"
+  },
+  "icon_theme": {
+    "mode": "light",
+    "light": "JetBrains New UI Icons (Dark)",
+    "dark": "Zed (Default)",
+  },
+  "edit_predictions": {
+    "provider": "none",
+  },
+  "project_panel": {
+    "dock": "left",
+  },
   "collaboration_panel": {
-    "dock": null
+    "dock": "left",
   },
   "notification_panel": {
     "dock": null,
-    "button": false
+    "button": false,
   },
   "chat_panel": {
     "button": null,
-    "dock": null
+    "dock": null,
   },
   "vim_mode": false,
   "ui_font_size": 16,
@@ -30,44 +44,84 @@
   "cursor_shape": "bar",
 
   "theme": {
-    "mode": "system",
-    "light": "Purr Light",
-    "dark": "Solarized Light"
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Aura Dark",
+  },
+  "theme_overrides": {
+    "Aura Dark": {
+      "editor.document_highlight.read_background": "#00000000",
+      "editor.document_highlight.write_background": "#00000000",
+      "border.variant": "#15141C",
+      "border": "#15141C",
+      "title_bar.background": "#15141C",
+      "panel.background": "#15141C",
+      "panel.focused_border": "#4E466E",
+      "players": [
+        {
+          "cursor": "#BD9DFF",
+        },
+      ],
+      "syntax": {
+        "comment": {
+          "font_style": "italic",
+        },
+        "comment.doc": {
+          "font_style": "italic",
+        },
+      },
+    },
   },
   "scrollbar": {
-    "show": "never"
+    "show": "never",
+  },
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_project_items": true,
+    "show_branch_name": true,
+    "show_user_menu": false,
+    "show_sign_in": false,
+  },
+  "tab_bar": {
+    "show": false,
+  },
+  "toolbar": {
+    "quick_actions": false,
+  },
+  "status_bar": {
+    "experimental.show": false,
   },
   "languages": {
     "JavaScript": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
+        "source.fixAll.eslint": true,
+      },
     },
     "TypeScript": {
       "language_servers": ["typescript-language-server", "!vtsls", "..."],
       "code_actions_on_format": {
         "source.organizeImports": true,
-        "source.fixAll.eslint": true
-      }
+        "source.fixAll.eslint": true,
+      },
     },
     "TSX": {
       "language_servers": ["typescript-language-server", "!vtsls", "..."],
       "code_actions_on_format": {
         "source.organizeImports": true,
-        "source.fixAll.eslint": true
-      }
-    }
+        "source.fixAll.eslint": true,
+      },
+    },
   },
   "lsp": {
     "tailwindcss-language-server": {
       "settings": {
-        "classAttributes": ["class", "className", "styles"]
-      }
-    }
+        "classAttributes": ["class", "className", "styles"],
+      },
+    },
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "file_scan_exclusions": [
     "**/.git",
@@ -90,14 +144,18 @@
     "**/.tap",
     "**/.nyc_output",
     "**/report",
-    "**/node_modules"
+    "**/node_modules",
   ],
-  "assistant": {
+  "agent": {
+    "dock": "right",
     "enabled": false,
-    "version": "1"
   },
   "features": {
     "copilot": false,
-    "edit_prediction_provider": "none"
-  }
+  },
+  "terminal": {
+    "shell": {
+      "program": "zsh",
+    },
+  },
 }
