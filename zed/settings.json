@@ -7,15 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "cli_default_open_behavior": "existing_window",
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "icon_theme": {
     "mode": "light",
-    "light": "JetBrains New UI Icons (Dark)",
+    "light": "Zed (Default)",
     "dark": "Zed (Default)",
   },
   "edit_predictions": {
@@ -35,7 +36,7 @@
     "button": null,
     "dock": null,
   },
-  "vim_mode": false,
+  "vim_mode": true,
   "ui_font_size": 16,
   "ui_font_weight": 400,
   "buffer_font_family": "JetBrainsMono Nerd Font",
@@ -45,8 +46,8 @@
 
   "theme": {
     "mode": "dark",
-    "light": "One Light",
-    "dark": "Aura Dark",
+    "light": "Catppuccin Latte (Blur) [Heavy]",
+    "dark": "Gruvbox Slate Blurred",
   },
   "theme_overrides": {
     "Aura Dark": {
@@ -71,6 +72,7 @@
         },
       },
     },
+    "Gruvbox Hurdle": {},
   },
   "scrollbar": {
     "show": "never",
@@ -89,7 +91,7 @@
     "quick_actions": false,
   },
   "status_bar": {
-    "experimental.show": false,
+    "experimental.show": true,
   },
   "languages": {
     "JavaScript": {
@@ -157,5 +159,7 @@
     "shell": {
       "program": "zsh",
     },
+    "dock": "right",
   },
+  "soft_wrap":"editor_width"
 }
