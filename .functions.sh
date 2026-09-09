@@ -13,35 +13,63 @@ function mydotfiles() {
 
 
 # Sequential Downloader Function
-dlx() {
-    # Check if input file is provided
-    if [[ -z "$1" ]]; then
-        echo "Usage: dlx <links-file>"
-        return 1
-    fi
+dlx () {
+	local rename=false
+	local file=""
 
-    local i=1
-    # Read the file line by line
-    while read -r line || [[ -n "$line" ]]; do
-        # Skip empty lines or lines starting with #
-        [[ -z "$line" || "$line" == \#* ]] && continue
+	# Parse flags and arguments
+	while [[ $# -gt 0 ]]; do
+		case "$1" in
+			-n)
+				rename=true
+				shift
+				;;
+			*)
+				if [[ -z "$file" ]]; then
+					file="$1"
+				else
+					echo "Error: Unexpected argument '$1'"
+					return 1
+				fi
+				shift
+				;;
+		esac
+	done
 
-        # Extract extension (removes query strings and finds last dot)
-        local clean_url="${line%%\?*}"
-        local ext="${clean_url##*.}"
-        
-        # If no extension found, default to 'dat' or leave blank
-        [[ "$ext" == "$clean_url" ]] && ext="bin"
+	if [[ -z "$file" ]]; then
+		echo "Usage: dlx [-n] <links-file>"
+		return 1
+	fi
 
-        local filename=$(printf "%04d.%s" $i "$ext")
+	if [[ ! -f "$file" ]]; then
+		echo "Error: File '$file' not found."
+		return 1
+	fi
 
-        echo "[$i] Downloading to $filename..."
-        wget -q -O "$filename" "$line"
-        
-        ((i++))
-    done < "$1"
-    
-    echo "Successfully downloaded $((i-1)) files."
+	local i=1
+	while read -r line || [[ -n "$line" ]]; do
+		# Skip empty lines and comments
+		[[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
+
+		# Strip trailing carriage returns (\r) for cross-platform safety
+		line="${line%$'\r'}"
+
+		if [[ "$rename" == true ]]; then
+			local clean_url="${line%%\?*}"
+			local ext="${clean_url##*.}"
+			[[ "$ext" == "$clean_url" || -z "$ext" ]] && ext="bin"
+			local filename=$(printf "%04d.%s" $i "$ext")
+			echo "[$i] Downloading to $filename..."
+			wget -q -O "$filename" "$line"
+		else
+			echo "[$i] Downloading $(basename "${line%%\?*}")..."
+			wget -q -nv --content-disposition "$line"
+		fi
+
+		((i++))
+	done < "$file"
+
+	echo "Successfully downloaded $((i-1)) files."
 }
 
 
