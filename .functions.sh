@@ -60,10 +60,10 @@ dlx () {
 			[[ "$ext" == "$clean_url" || -z "$ext" ]] && ext="bin"
 			local filename=$(printf "%04d.%s" $i "$ext")
 			echo "[$i] Downloading to $filename..."
-			wget -q -O "$filename" "$line"
+			wget -q -O -nc "$filename" "$line"
 		else
 			echo "[$i] Downloading $(basename "${line%%\?*}")..."
-			wget -q -nv --content-disposition "$line"
+			wget -q -nv -nc --content-disposition "$line"
 		fi
 
 		((i++))
